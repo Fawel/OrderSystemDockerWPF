@@ -1,0 +1,15 @@
+version: "3"
+services:
+    mongo:
+        image: mongo
+        restart: always
+        ports:
+          - 27017:27017
+
+    customer:
+        build: ./CustomersSystem
+        depends_on:
+            - mongo
+        ports:
+            - 8080:80
+            - 8081:443
