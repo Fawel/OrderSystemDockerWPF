@@ -11,8 +11,19 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrderSystem.Shared", "Order
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Customer", "Customer", "{863D5BD1-00DE-4470-9786-1E31A55CF575}"
 	ProjectSection(SolutionItems) = preProject
-		docker-compose.yml = docker-compose.yml
+		docker-compose.customer.yml = docker-compose.customer.yml
 	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Order", "Order", "{EFBC1DB2-0B50-48D3-BA06-E4FE7AE1C47D}"
+	ProjectSection(SolutionItems) = preProject
+		docker-compose.order.yml = docker-compose.order.yml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{0A176E60-4AE5-4FA9-8C90-C2EC5F46888E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RequestLogMiddleware", "RequestLogMiddleware\RequestLogMiddleware.csproj", "{3D4ED1D6-2D87-415A-82AA-F7F044AE7DFC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomerSystem.Shared", "CustomerSystem.Shared\CustomerSystem.Shared.csproj", "{C1A8C702-7319-4FED-81FF-0BED5FF9E6FC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -32,12 +43,24 @@ Global
 		{ACAC5777-6B6D-4895-A7A6-A6F4AE3DBE2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ACAC5777-6B6D-4895-A7A6-A6F4AE3DBE2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ACAC5777-6B6D-4895-A7A6-A6F4AE3DBE2A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D4ED1D6-2D87-415A-82AA-F7F044AE7DFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D4ED1D6-2D87-415A-82AA-F7F044AE7DFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D4ED1D6-2D87-415A-82AA-F7F044AE7DFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D4ED1D6-2D87-415A-82AA-F7F044AE7DFC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1A8C702-7319-4FED-81FF-0BED5FF9E6FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1A8C702-7319-4FED-81FF-0BED5FF9E6FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1A8C702-7319-4FED-81FF-0BED5FF9E6FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1A8C702-7319-4FED-81FF-0BED5FF9E6FC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
+		{A2C8B573-1716-43A3-A713-1CC787AF5FE2} = {EFBC1DB2-0B50-48D3-BA06-E4FE7AE1C47D}
 		{AF7652CB-04E1-4A38-9556-1E4B46E82353} = {863D5BD1-00DE-4470-9786-1E31A55CF575}
+		{ACAC5777-6B6D-4895-A7A6-A6F4AE3DBE2A} = {0A176E60-4AE5-4FA9-8C90-C2EC5F46888E}
+		{3D4ED1D6-2D87-415A-82AA-F7F044AE7DFC} = {0A176E60-4AE5-4FA9-8C90-C2EC5F46888E}
+		{C1A8C702-7319-4FED-81FF-0BED5FF9E6FC} = {0A176E60-4AE5-4FA9-8C90-C2EC5F46888E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3576A6EC-955A-4AF1-91C8-E1B68B4D2DA8}
