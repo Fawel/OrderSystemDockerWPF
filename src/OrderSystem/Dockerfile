@@ -7,15 +7,12 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/core/sdk:3.1-buster AS build
 WORKDIR /src
-
-#копируем зависимости
-COPY ["../OrderSystem.Shared/OrderSystem.Shared.csproj", "OrderSystem.Shared/"]
-COPY ["../RequestLogMiddleware/RequestLogMiddleware.csproj", "RequestLogMiddleware/"]
-
-COPY ["./OrderSystem.csproj", "OrderSystem/"]
+COPY ["OrderSystem/OrderSystem.csproj", "OrderSystem/"]
+COPY ["OrderSystem.Shared/OrderSystem.Shared.csproj", "OrderSystem.Shared/"]
+COPY ["RequestLogMiddleware/RequestLogMiddleware.csproj", "RequestLogMiddleware/"]
 RUN dotnet restore "OrderSystem/OrderSystem.csproj"
-WORKDIR "/src/OrderSystem"
 COPY . .
+WORKDIR "/src/OrderSystem"
 RUN dotnet build "OrderSystem.csproj" -c Release -o /app/build
 
 FROM build AS publish

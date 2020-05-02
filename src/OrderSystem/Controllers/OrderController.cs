@@ -24,7 +24,7 @@ namespace OrderSystem.Controllers
             _logger = logger;
         }
 
-        [HttpGet("{uid:Guid}")]
+        [HttpGet]
         public async Task<IActionResult> Get(Guid uid)
         {
             var isExist = await _orderService.IsOrderExistAsync(uid);
