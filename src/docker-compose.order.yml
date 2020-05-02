@@ -1,0 +1,22 @@
+version: "3"
+services:
+  postgres:
+   image: postgres
+   restart: always
+   environment:
+     POSTGRES_PASSWORD: qwerty
+     POSTGRES_USER: fawel
+     POSTGRES_DB: orderDb
+   ports:
+     - 23560:8080
+
+  ordersystem:
+   build: 
+    context: .
+    dockerfile: dockerfile-order
+   restart: always
+   depends_on:
+     - postgres
+   ports:
+    - 8201:80
+    - 8202:443

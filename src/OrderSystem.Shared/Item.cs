@@ -6,16 +6,16 @@ namespace OrderSystem.Shared
 {
     public class Item
     {
-        public readonly int Id;
-        public readonly Guid Identifier;
-        public readonly string Name;
-        public readonly ItemType Type;
-    }
+        public readonly ItemIdentifier ItemIdentifier;
+        public readonly DateTime ProductionDate;
+        public readonly int CurrentPrice;
 
-    public enum ItemType
-    {
-        Food,
-        Cloth,
-        Other
+        public DateTime GetExpireDate() 
+        {
+            if (ItemIdentifier.CanExpire)
+                return new DateTime();
+
+            return ProductionDate.Add(ItemIdentifier.ExpireAfter);
+        }
     }
 }
